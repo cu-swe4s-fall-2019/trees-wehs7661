@@ -1,0 +1,6 @@
+[submodule "avl_tree"]
+	path = avl_tree
+	url = https://github.com/swe4s/avl_tree
+[submodule "hash-tables-wehs7661"]
+	path = hash-tables-wehs7661
+	url = https://github.com/cu-swe4s-fall-2019/hash-tables-wehs7661.git
