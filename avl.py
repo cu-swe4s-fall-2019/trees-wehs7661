@@ -83,3 +83,16 @@ class AVLTree():
                 # left left
                 self.rotate_right()
                 self.update_tree_info()
+
+    def search(self, key):
+        if self.node is None:
+            return None
+        else:
+            if self.node.key == key:
+                return self.node.value
+            elif self.node.right is None and self.node.left is None:
+                return None
+            elif key >= self.node.key:
+                return self.node.right.search(key)
+            elif key < self.node.key:
+                return self.node.left.search(key)

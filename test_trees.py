@@ -87,11 +87,14 @@ class TestAVLTree(unittest.TestCase):
         self.assertEqual(self.tree.node.left.node.right.node.value, 'C')
     
     def test_avl_search(self):
-        pass
-
-
-
-
+        r0 = self.tree.search(4)
+        r1 = self.tree.search(6)
+        r2 = self.tree.search(3)
+        r3 = self.tree.search(4.5)
+        self.assertEqual(r0, 'D')
+        self.assertEqual(r1, 'F')
+        self.assertEqual(r2, 'C')
+        self.assertEqual(r3, None)
 
 if __name__ == '__main__':
     unittest.main()
