@@ -94,6 +94,20 @@ def print_tree(root, key_list=[], value_list=[]):
     return key_list, value_list
 
 def search(root, key):
+    """
+    This function takes in a key and returns its corresponding value.
+
+    Parameters
+    ----------
+    root : obj
+        An object of Node serving as a root of a tree or a subtree
+    key : int or float
+        The key to be looked for
+
+    Returns
+    -------
+    The value corresponds to the given key. 
+    """
     if root is None:
         return None
     else:
