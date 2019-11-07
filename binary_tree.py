@@ -99,6 +99,18 @@ def search(root, key):
     else:
         if root.key == key:
             return root.value
+        elif root.right is None and root.left is None:
+            return None
+        elif key >= root.key:
+            return search(root.right, key)
+            # No need to return root.right.value, since this should be
+            # returned by root.key as root is replaced by root.right
+        elif key < root.key:
+            return search(root.left, key)
+            # No need to return root.right.value, since this should be
+            # returned by root.key as root is replaced by root.right
+
+
 
 
 

@@ -31,6 +31,16 @@ class TestBinaryTree(unittest.TestCase):
         self.assertEqual(key_list, [6, 7, 8, 9, 3, 4, 5, 2])
         self.assertEqual(value_list, ['Root', 'A', 'B', 'C', 'D', 'F', 'G', 'E'])
 
+    def test_search(self):
+        r0 = bt.search(self.root, 6)
+        r1 = bt.search(self.root, 2)
+        r2 = bt.search(self.root, 8)
+        r3 = bt.search(self.root, 7.5)
+        self.assertEqual(r0, 'Root')
+        self.assertEqual(r1, 'E')
+        self.assertEqual(r2, 'B')
+        self.assertEqual(r3, None)
+
 if __name__ == '__main__':
     unittest.main()
 
