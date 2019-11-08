@@ -105,7 +105,7 @@ def main():
         print('Results of the AVL tree')
         print('=======================')
         # key insertion
-        avl_tree = avl.AVL()
+        avl_tree = avl.AVLTree()
         i = 0     # number of pairs taken in / line number
         key_list = []
         start = time.time()
@@ -117,6 +117,7 @@ def main():
                 avl_tree.insert(key, value)
                 i += 1
         end = time.time()
+        print('It requires %8.7f seconds to insert %s keys to the AVL tree.' %((end - start), args.number_pairs))
 
         # searching existing keys
         start = time.time()
@@ -131,7 +132,6 @@ def main():
             avl_tree.search(key + '_non')
         end = time.time()
         print('It requires %8.7f seconds to search for %s non-existing keys in the AVL tree.\n' %((end - start), args.number_pairs))
-
 
 
     if args.data_structure == 'tree' or args.data_structure == 'all':
