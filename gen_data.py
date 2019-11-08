@@ -1,6 +1,7 @@
 import random
 import string
 
+
 def main():
     """
     This program generate rand.txt and sorted.txt, which contain 10000
@@ -20,12 +21,6 @@ def main():
         file1.write('\n')
         file2.write('\n')
 
+
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-

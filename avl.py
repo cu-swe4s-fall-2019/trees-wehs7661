@@ -19,6 +19,7 @@ class Node:
         self.right = right    # which is None here (default)
         self.key = key
 
+
 class AVLTree():
     def __init__(self):
         """
@@ -30,7 +31,7 @@ class AVLTree():
 
     def insert(self, key, value=None):
         """
-        This function insert a value given a root of a tree or a subtree, 
+        This function insert a value given a root of a tree or a subtree,
         which could be a child of other nodes.
 
         Parameters
@@ -65,8 +66,8 @@ class AVLTree():
 
     def update_tree_info(self, recursive=True):
         """
-        This function updates the information of an AVL tree, including the heights
-        and the balance factor of each node.
+        This function updates the information of an AVL tree, including the\
+            heights and the balance factor of each node.
 
         Parameters
         ----------
@@ -86,7 +87,8 @@ class AVLTree():
                     self.node.right.update_tree_info()
                 if self.node.left is not None:
                     self.node.left.update_tree_info()
-            self.height = 1 + max(self.node.left.height, self.node.right.height)
+            self.height = 1 + max(self.node.left.height,
+                                  self.node.right.height)
             self.balance = self.node.left.height - self.node.right.height
 
     def rotate_right(self):
@@ -126,7 +128,7 @@ class AVLTree():
                     # right left
                     self.node.right.rotate_right()
                     self.update_tree_info()
-                #right right
+                # right right
                 self.rotate_left()
                 self.update_tree_info()
             if self.balance > 1:    # left subtree is larger
@@ -149,7 +151,7 @@ class AVLTree():
 
         Returns
         -------
-        The value corresponds to the given key. 
+        The value corresponds to the given key.
         """
         if self.node is None:
             return None

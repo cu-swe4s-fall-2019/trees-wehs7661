@@ -2,6 +2,7 @@ import binary_tree as bt
 import avl
 import unittest
 
+
 class TestBinaryTree(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -30,8 +31,10 @@ class TestBinaryTree(unittest.TestCase):
         """
         self.assertEqual([self.root.key, self.root.value], [6, 'Root'])
         self.assertEqual([self.root.left.key, self.root.left.value], [3, 'D'])
-        self.assertEqual([self.root.right.key, self.root.right.value], [7, 'A'])
-        self.assertEqual([self.root.left.left.key, self.root.left.left.value], [2, 'E'])
+        self.assertEqual(
+            [self.root.right.key, self.root.right.value], [7, 'A'])
+        self.assertEqual(
+            [self.root.left.left.key, self.root.left.left.value], [2, 'E'])
 
     def test_print_tree(self):
         """
@@ -39,7 +42,8 @@ class TestBinaryTree(unittest.TestCase):
         """
         key_list, value_list = bt.print_tree(self.root)
         self.assertEqual(key_list, [6, 7, 8, 9, 3, 4, 5, 2])
-        self.assertEqual(value_list, ['Root', 'A', 'B', 'C', 'D', 'F', 'G', 'E'])
+        self.assertEqual(
+            value_list, ['Root', 'A', 'B', 'C', 'D', 'F', 'G', 'E'])
 
     def test_binary_search(self):
         """
@@ -53,6 +57,7 @@ class TestBinaryTree(unittest.TestCase):
         self.assertEqual(r1, 'E')
         self.assertEqual(r2, 'B')
         self.assertEqual(r3, None)
+
 
 class TestAVLTree(unittest.TestCase):
     @classmethod
@@ -103,7 +108,7 @@ class TestAVLTree(unittest.TestCase):
         self.assertEqual(self.tree.node.left.node.value, 'B')
         self.assertEqual(self.tree.node.left.node.left.node.value, 'A')
         self.assertEqual(self.tree.node.left.node.right.node.value, 'C')
-    
+
     def test_avl_search(self):
         """
         An unit test to test the searching method for an AVL tree.
@@ -117,7 +122,6 @@ class TestAVLTree(unittest.TestCase):
         self.assertEqual(r2, 'C')
         self.assertEqual(r3, None)
 
+
 if __name__ == '__main__':
     unittest.main()
-
-        

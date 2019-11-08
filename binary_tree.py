@@ -22,9 +22,10 @@ class Node:
         self.right = right    # which is None here (default)
         self.key = key
 
+
 def insert(root, key, value=None):
     """
-    This function insert a value given a root of a tree or a subtree, 
+    This function insert a value given a root of a tree or a subtree,
     which could be a child of other nodes.
 
     Parameters
@@ -56,10 +57,11 @@ def insert(root, key, value=None):
                 # Use root.left as the root of the subtree
                 insert(root.left, key, value)
 
+
 def print_tree(root, key_list=[], value_list=[]):
     """
-    This function prints key of each node in a tree to a list, from the 
-    rightmost node to the leftmost. This function could be useful for 
+    This function prints key of each node in a tree to a list, from the
+    rightmost node to the leftmost. This function could be useful for
     checking the functionality of the insert function.
 
     Parameters
@@ -90,8 +92,9 @@ def print_tree(root, key_list=[], value_list=[]):
             print_tree(root.left, key_list, value_list)
             # root.left.key will be print out when executing print(root.key)
             # in print_tree(root.left)
-            
+
     return key_list, value_list
+
 
 def search(root, key):
     """
@@ -106,7 +109,7 @@ def search(root, key):
 
     Returns
     -------
-    The value corresponds to the given key. 
+    The value corresponds to the given key.
     """
     if root is None:
         return None
@@ -123,9 +126,3 @@ def search(root, key):
             return search(root.left, key)
             # No need to return root.right.value, since this should be
             # returned by root.key as root is replaced by root.right
-
-
-
-
-
-
